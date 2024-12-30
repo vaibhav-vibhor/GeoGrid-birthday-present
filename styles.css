@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 1fr;  /* 100px for the row headers, then 3 columns for content */
+    grid-template-rows: 40px 1fr 1fr 1fr;  /* Header row, then 3 rows for content */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.header-cell {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.grid-item {
+    background-color: #ddd;
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.grid-item:hover {
+    background-color: #bbb;
+    transform: scale(1.05);
+}
+
+.grid-item::before {
+    content: "Click to Reveal";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
